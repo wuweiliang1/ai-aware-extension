@@ -4,7 +4,8 @@
   --primary: #3b82f6;
   --success: #10b981;
   --wechat: #07c160;
-  --paypal: #0070ba;
+  --coffee: #FFDD00;
+  --coffee-dark: #ffc800;
   --text: #1e293b;
   --text-muted: #64748b;
   --border: #e2e8f0;
@@ -153,24 +154,26 @@ body {
   font-weight: 600;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: #1e293b;
   border-radius: 10px;
   transition: all 0.3s ease;
   margin-top: 12px;
 }
 
-.paypal-btn {
-  background: var(--paypal);
+.coffee-btn {
+  background: var(--coffee);
+  color: #1e293b;
 }
 
-.paypal-btn:hover {
-  background: #005ea6;
+.coffee-btn:hover {
+  background: var(--coffee-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 112, 186, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 221, 0, 0.4);
 }
 
 .wechat-btn {
   background: var(--wechat);
+  color: white;
 }
 
 .wechat-btn:hover {

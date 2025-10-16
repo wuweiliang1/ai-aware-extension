@@ -1,18 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "__MSG_extName__",
+  "name": "AI Bookmark Finder",
   "version": "1.0.0",
-  "description": "__MSG_extDescription__",
-  "author": "Your Name",
+  "description": "Find and open bookmarks quickly using AI-powered intent matching",
+  "author": "wuweiliang",
   "default_locale": "en",
   "permissions": [
     "storage",
     "bookmarks",
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
   "host_permissions": [
     "https://api.deepseek.com/*",
-    "https://api.openai.com/*",
+    "https://api.openai.com/*"
+  ],
+  "optional_host_permissions": [
     "http://*/*",
     "https://*/*"
   ],
@@ -20,9 +23,9 @@
     "default_title": "AI Bookmark Finder",
     "default_popup": "popup/popup.html",
     "default_icon": {
-      "16": "icons/icon-16.svg",
-      "48": "icons/icon-48.svg",
-      "128": "icons/icon-128.svg"
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
     }
   },
   "background": {
@@ -33,8 +36,8 @@
     "open_in_tab": true
   },
   "icons": {
-    "16": "icons/icon-16.svg",
-    "48": "icons/icon-48.svg",
-    "128": "icons/icon-128.svg"
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   }
 }

@@ -22,8 +22,8 @@ function applyTranslations() {
 
   // Payment configuration
   const paymentConfig = {
-    paypalLink: 'https://paypal.me/youraccount', // Replace with your actual PayPal.me link
-    wechatQR: '../icons/icon128.png' // Replace with your actual WeChat QR code image
+    buyMeACoffeeLink: 'https://buymeacoffee.com/wuweiliang', // Replace with your actual Buy Me a Coffee link
+    wechatQR: '../icons/wechat_qr.png' // Replace with your actual WeChat QR code image
   };
 
   const region = detectRegion();
@@ -33,12 +33,12 @@ function applyTranslations() {
     document.getElementById('chinaSection').style.display = 'block';
     document.getElementById('internationalSection').style.display = 'none';
     document.getElementById('wechatQR').src = paymentConfig.wechatQR;
-    document.getElementById('paypalLinkChina').href = paymentConfig.paypalLink;
+    document.getElementById('buyMeACoffeeLinkChina').href = paymentConfig.buyMeACoffeeLink;
   } else {
     document.getElementById('chinaSection').style.display = 'none';
     document.getElementById('internationalSection').style.display = 'block';
     document.getElementById('wechatQRIntl').src = paymentConfig.wechatQR;
-    document.getElementById('paypalLinkIntl').href = paymentConfig.paypalLink;
+    document.getElementById('buyMeACoffeeLinkIntl').href = paymentConfig.buyMeACoffeeLink;
   }
 
   // Back link handler
