@@ -95,8 +95,8 @@ AI Bookmark Finder is open source. You can review our code to verify our privacy
 
 If you have questions about this Privacy Policy or our practices, please contact us:
 
-- **Email:** [Your Email]
-- **GitHub:** [GitHub Issues](https://github.com/wuweiliang1/ai-aware-extension/issues)
+- **GitHub Issues**: [https://github.com/wuweiliang1/ai-aware-extension/issues](https://github.com/wuweiliang1/ai-aware-extension/issues)
+- **GitHub Discussions**: [https://github.com/wuweiliang1/ai-aware-extension/discussions](https://github.com/wuweiliang1/ai-aware-extension/discussions)
 
 ---
 
