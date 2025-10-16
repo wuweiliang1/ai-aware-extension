@@ -2,7 +2,7 @@
   "name": "ai-bookmark-finder",
   "version": "1.0.0",
   "description": "AI-powered bookmark finder - Use natural language to find and open bookmarks intelligently",
-  "author": "Your Name <your.email@example.com>",
+  "author": "wuweiliang",
   "license": "MIT",
   "keywords": [
     "chrome-extension",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ai-bookmark-finder"
+    "url": "https://github.com/wuweiliang1/ai-aware-extension"
   },
   "scripts": {
     "lint": "echo \"No linter configured\"",
