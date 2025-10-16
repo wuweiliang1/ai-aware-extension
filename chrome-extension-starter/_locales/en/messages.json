@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "AI Bookmark Finder",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Find and open your bookmarks using AI-powered natural language search.",
+    "description": "Extension description"
+  }
+}

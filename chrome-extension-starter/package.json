@@ -1,0 +1,23 @@
+{
+  "name": "ai-bookmark-finder",
+  "version": "1.0.0",
+  "description": "AI-powered bookmark finder - Use natural language to find and open bookmarks intelligently",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "keywords": [
+    "chrome-extension",
+    "bookmark",
+    "ai",
+    "deepseek",
+    "openai",
+    "productivity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-bookmark-finder"
+  },
+  "scripts": {
+    "lint": "echo \"No linter configured\"",
+    "format": "echo \"No formatter configured\""
+  }
+}

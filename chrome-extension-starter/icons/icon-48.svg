@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none">
+	<!-- Badge background -->
+	<rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="#111827"/>
+	<!-- Bookmark shape -->
+	<path d="M8 6h8a1 1 0 0 1 1 1v11l-5-3-5 3V7a1 1 0 0 1 1-1z" fill="#60A5FA"/>
+	<!-- AI letters -->
+	<path d="M6.8 16.8l1.1-3h1.2l1.1 3h-1l-.2-.6H8l-.2.6h-1zM10.9 16.8v-3h.9v3h-.9z" fill="#F9FAFB"/>
+	<!-- Spark -->
+	<circle cx="17" cy="8.5" r="1.2" fill="#F59E0B"/>
+</svg>

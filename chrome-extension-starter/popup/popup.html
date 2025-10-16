@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Bookmark Finder</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px">
+        <h1 style="margin:0" data-i18n="popup.title">AI Bookmark Finder</h1>
+        <div style="display:flex; gap:8px">
+          <button id="toggleHistory" class="icon-btn" data-i18n-title="popup.tooltipHistory" title="History">📜</button>
+          <button id="openSettings" class="icon-btn" data-i18n-title="popup.tooltipSettings" title="Settings">⚙️</button>
+        </div>
+      </div>
+      
+      <!-- History Panel -->
+      <div id="historyPanel" style="display:none; margin-bottom:12px; background:rgba(255,255,255,0.03); border-radius:8px; padding:10px">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px">
+          <span style="font-size:13px; color:#9fb0c6; font-weight:600" data-i18n="popup.historyTitle">Recent Searches</span>
+          <button id="clearHistory" style="background:transparent; border:none; color:#ff6b6b; font-size:12px; cursor:pointer; padding:2px 6px" data-i18n="popup.historyClear">Clear</button>
+        </div>
+        <div id="historyList" style="font-size:13px"></div>
+      </div>
+      
+      <p style="margin:6px 0 12px 0; color: #9fb0c6; font-size:13px" data-i18n="popup.placeholder">Enter your intent</p>
+      <input id="intent" type="text" data-i18n-placeholder="popup.intentPlaceholder" placeholder="Enter your intent" />
+      <p id="status"><span data-i18n="popup.status">Status</span>: <em data-i18n="popup.statusReady">Ready</em></p>
+      <button id="find" data-i18n="popup.btnFind">Find & Open</button>
+
+      <div id="result" data-i18n="popup.resultNotQueried">Not queried yet</div>
+      <ul id="candidates"></ul>
+      
+      <!-- Donate Link -->
+      <div style="margin-top:16px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.06); text-align:center">
+        <a id="donateLink" href="#" style="color:#fbbf24; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px; transition:all 0.2s">
+          <span>☕</span>
+          <span data-i18n="popup.donateLink">Buy me a coffee</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="../i18n/i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "AI Bookmark Finder",
+    "description": "扩展名称"
+  },
+  "extDescription": {
+    "message": "通过自然语言描述你的意图，AI 帮你快速找到并打开最匹配的书签。",
+    "description": "扩展描述"
+  }
+}

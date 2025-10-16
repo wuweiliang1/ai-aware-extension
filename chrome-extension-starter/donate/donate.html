@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="donate.pageTitle">支持开发者 | Support Developer</title>
+  <link rel="stylesheet" href="donate.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 data-i18n="donate.title">☕ 请我喝杯咖啡</h1>
+      <p class="subtitle" data-i18n="donate.subtitle">如果这个扩展对你有帮助，请考虑支持一下开发者 ❤️</p>
+    </div>
+
+    <!-- China Region -->
+    <div id="chinaSection" class="payment-section" style="display:none">
+      <div class="payment-card">
+        <div class="payment-header">
+          <span class="payment-icon">💚</span>
+          <h2 data-i18n="donate.wechat">微信赞赏</h2>
+        </div>
+        <p class="payment-desc" data-i18n="donate.wechatDesc">使用微信扫描下方二维码</p>
+        <div class="qr-container">
+          <img id="wechatQR" src="" alt="微信赞赏码" class="qr-code" />
+          <p class="qr-hint" data-i18n="donate.wechatHint">打开微信扫一扫</p>
+        </div>
+      </div>
+
+      <div class="divider">
+        <span data-i18n="donate.or">或</span>
+      </div>
+
+      <div class="payment-card secondary">
+        <div class="payment-header">
+          <span class="payment-icon">💙</span>
+          <h3 data-i18n="donate.paypalSecondary">PayPal (国际支付)</h3>
+        </div>
+        <p class="payment-desc" data-i18n="donate.paypalSecondaryDesc">适合有 PayPal 账户的用户</p>
+        <a id="paypalLinkChina" href="" target="_blank" class="donate-btn paypal-btn" data-i18n="donate.paypalButtonChina">
+          通过 PayPal 捐赠
+        </a>
+      </div>
+    </div>
+
+    <!-- International Region -->
+    <div id="internationalSection" class="payment-section" style="display:none">
+      <div class="payment-card">
+        <div class="payment-header">
+          <span class="payment-icon">💙</span>
+          <h2 data-i18n="donate.paypal">PayPal</h2>
+        </div>
+        <p class="payment-desc" data-i18n="donate.paypalDesc">Support via PayPal - Safe and Easy</p>
+        <a id="paypalLinkIntl" href="" target="_blank" class="donate-btn paypal-btn" data-i18n="donate.paypalButtonIntl">
+          Donate with PayPal
+        </a>
+      </div>
+
+      <div class="divider">
+        <span data-i18n="donate.or">or</span>
+      </div>
+
+      <div class="payment-card secondary">
+        <div class="payment-header">
+          <span class="payment-icon">💚</span>
+          <h3 data-i18n="donate.wechatSecondary">WeChat Pay (For China Users)</h3>
+        </div>
+        <p class="payment-desc" data-i18n="donate.wechatSecondaryDesc">Scan QR code with WeChat</p>
+        <div class="qr-container small">
+          <img id="wechatQRIntl" src="" alt="WeChat QR Code" class="qr-code small" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Thank You Message -->
+    <div class="thank-you">
+      <p data-i18n="donate.thankYou">🙏 感谢您的支持！/ Thank you for your support!</p>
+      <p class="small-text" data-i18n="donate.thankYouMessage">您的支持是我持续开发的动力</p>
+    </div>
+
+    <!-- Back Link -->
+    <div class="footer">
+      <a href="#" id="backLink" class="back-link" data-i18n="donate.backLink">← 返回扩展 / Back to Extension</a>
+    </div>
+  </div>
+
+  <script src="../i18n/i18n.js"></script>
+  <script src="donate.js"></script>
+</body>
+</html>

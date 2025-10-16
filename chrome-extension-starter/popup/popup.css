@@ -1,0 +1,45 @@
+:root{
+	--bg: #0f1724;
+	--card: #0b1220;
+	--muted: #9aa4b2;
+	--accent: #4f9cff;
+	--accent-2:#7bd389;
+}
+body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin: 0; background: var(--bg); color: #e6eef8 }
+.container { padding: 14px; width: 320px; box-sizing: border-box }
+.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05)); padding: 12px; border-radius: 10px; box-shadow: 0 6px 18px rgba(2,6,23,0.6); }
+h1 { font-size: 16px; margin: 0 0 8px 0; color: #f4fbff }
+.icon-btn { background: rgba(255,255,255,0.05); color: #9aa4b2; padding: 6px 10px; font-size: 16px; border-radius: 6px; cursor: pointer; border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s }
+.icon-btn:hover { background: rgba(255,255,255,0.1); color: #e6eef8 }
+.icon-btn:active { transform: scale(0.95) }
+.history-item { 
+  padding: 6px 8px; 
+  margin: 4px 0; 
+  background: rgba(255,255,255,0.03); 
+  border-radius: 6px; 
+  color: #b8c5d6; 
+  cursor: pointer; 
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.history-item:hover { 
+  background: rgba(79,156,255,0.15); 
+  color: var(--accent);
+  transform: translateX(2px);
+}
+.history-item::before {
+  content: '🔍';
+  font-size: 12px;
+  opacity: 0.6;
+}
+input[type="text"] { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); color: inherit; box-sizing: border-box }
+button { padding: 10px 14px; font-size: 14px; border-radius: 8px; border: none; cursor: pointer }
+#find { background: linear-gradient(90deg,var(--accent),#2b88ff); color: white; width: 100%; margin-top: 10px }
+#status { margin: 8px 0; color: var(--muted); font-size: 13px }
+#result { margin-top: 8px; color: #dff1ff; font-size: 13px }
+ul { padding-left: 18px; margin: 6px 0 }
+li { margin: 6px 0; color: var(--muted); font-size: 13px }
+.open-info { margin-top:8px; font-size:12px; color: var(--accent-2) }
+#donateLink:hover { color: #fcd34d; transform: scale(1.05) }
