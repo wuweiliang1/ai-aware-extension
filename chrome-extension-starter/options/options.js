@@ -74,11 +74,14 @@ function applyTranslations() {
       document.getElementById('compatibleHelp').style.display = 'block';
     }
     
-    // Hide API Key help for local mode
+    // Show/hide API Key field and help for local mode
+    const apiKeyLabel = document.getElementById('apiKeyLabel');
     const apiKeyHelp = document.getElementById('apiKeyHelp');
     if (provider === 'local') {
+      apiKeyLabel.style.display = 'none';
       apiKeyHelp.style.display = 'none';
     } else {
+      apiKeyLabel.style.display = 'block';
       apiKeyHelp.style.display = 'block';
     }
     
