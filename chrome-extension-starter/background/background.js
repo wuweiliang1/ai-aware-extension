@@ -126,18 +126,29 @@ ${bookmarkList}
 
 async function callLLMForRanking(intent, bookmarks, config) {
   // Generic LLM caller supporting DeepSeek, OpenAI, and OpenAI-compatible endpoints
-  const { provider, apiKey, customEndpoint, authMethod, customModel } = config;
+  const { provider, apiKey, customEndpoint, authMethod, customModel, contextMode } = config;
   
-  // Build a list with both title and URL for richer context
-  const bookmarkList = bookmarks.map((b, i) => 
-    `${i + 1}. 标题: ${b.title}\n   URL: ${b.url}`
-  ).join('\n\n');
+  // Build bookmark list based on context mode
+  let bookmarkList, listDescription;
+  if (contextMode === 'title-only') {
+    // Title only mode - faster, less tokens
+    bookmarkList = bookmarks.map((b, i) => 
+      `${i + 1}. ${b.title}`
+    ).join('\n');
+    listDescription = '书签列表（仅标题）';
+  } else {
+    // Title + URL mode (default) - more accurate
+    bookmarkList = bookmarks.map((b, i) => 
+      `${i + 1}. 标题: ${b.title}\n   URL: ${b.url}`
+    ).join('\n\n');
+    listDescription = '书签列表（包含标题和URL）';
+  }
   
   const prompt = `根据用户意图找到最匹配的书签。
 
 用户意图："""${intent}"""
 
-书签列表（包含标题和URL）：
+${listDescription}：
 ${bookmarkList}
 
 要求：
@@ -347,11 +358,12 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
       let matchedBookmarks = [];
       try {
-        const cfg = await storageGet(['provider','apiKey','deepseekApiKey','openaiApiKey','compatibleApiKey','customEndpoint','authMethod','customModel','reopenTab']);
+        const cfg = await storageGet(['provider','apiKey','deepseekApiKey','openaiApiKey','compatibleApiKey','customEndpoint','authMethod','customModel','contextMode','reopenTab']);
         const provider = cfg.provider || 'local';
+        const contextMode = cfg.contextMode || 'title-url'; // Default to title-url for better accuracy
         const reopenTab = cfg.reopenTab !== false; // Default to true
         const apiKeyKey = getApiKeyKey(provider);
-        console.log('[BookmarkFinder] provider:', provider, 'hasApiKey:', !!cfg[apiKeyKey], 'reopenTab:', reopenTab);
+        console.log('[BookmarkFinder] provider:', provider, 'hasApiKey:', !!cfg[apiKeyKey], 'contextMode:', contextMode, 'reopenTab:', reopenTab);
         
         if ((provider === 'deepseek' || provider === 'openai' || provider === 'openai-compatible') && cfg[apiKeyKey]) {
           console.log('[BookmarkFinder] calling LLM for ranking');
@@ -360,7 +372,8 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
             apiKey: cfg[apiKeyKey],
             customEndpoint: cfg.customEndpoint,
             authMethod: cfg.authMethod,
-            customModel: cfg.customModel
+            customModel: cfg.customModel,
+            contextMode: contextMode
           });
           matchedBookmarks = orderedTitles.map(t => flat.find(b => b.title === t)).filter(Boolean);
         } else {

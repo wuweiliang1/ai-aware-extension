@@ -49,6 +49,7 @@ function applyTranslations() {
   const authMethodLabel = document.getElementById('authMethodLabel');
   const customModelEl = document.getElementById('customModel');
   const customModelLabel = document.getElementById('customModelLabel');
+  const contextModeEl = document.getElementById('contextMode');
   const reopenTabEl = document.getElementById('reopenTab');
   const languageEl = document.getElementById('language');
   const saveBtn = document.getElementById('save');
@@ -106,7 +107,7 @@ function applyTranslations() {
   });
 
   async function loadOptions() {
-    const data = await storageGet(['provider','apiKey','deepseekApiKey','openaiApiKey','compatibleApiKey','customEndpoint','authMethod','customModel','reopenTab','language']);
+    const data = await storageGet(['provider','apiKey','deepseekApiKey','openaiApiKey','compatibleApiKey','customEndpoint','authMethod','customModel','contextMode','reopenTab','language']);
     console.log('[Options] loaded:', data);
     const provider = (data && data.provider) || 'local';
     providerEl.value = provider;
@@ -115,6 +116,7 @@ function applyTranslations() {
     customEndpointEl.value = (data && data.customEndpoint) || '';
     authMethodEl.value = (data && data.authMethod) || 'bearer';
     customModelEl.value = (data && data.customModel) || '';
+    contextModeEl.value = (data && data.contextMode) || 'title-url'; // Default to title-url for better accuracy
     reopenTabEl.checked = (data && data.reopenTab) !== false; // Default to true
     languageEl.value = (data && data.language) || 'auto';
     updateFieldsVisibility();
@@ -126,6 +128,7 @@ function applyTranslations() {
     const customEndpoint = customEndpointEl.value;
     const authMethod = authMethodEl.value;
     const customModel = customModelEl.value;
+    const contextMode = contextModeEl.value;
     const reopenTab = reopenTabEl.checked;
     const selectedLanguage = languageEl.value; // 'auto' | 'en' | 'zh-CN' ...
 
@@ -141,13 +144,14 @@ function applyTranslations() {
       customEndpoint,
       authMethod,
       customModel,
+      contextMode,
       reopenTab,
       language: selectedLanguage === 'auto' ? null : selectedLanguage
     };
 
     // Save all settings
     await storageSet(settings);
-    console.log('[Options] saved:', { provider, [apiKeyKey]: apiKey ? '***' : '', customEndpoint, authMethod, customModel, reopenTab, language: settings.language || 'auto' });
+    console.log('[Options] saved:', { provider, [apiKeyKey]: apiKey ? '***' : '', customEndpoint, authMethod, customModel, contextMode, reopenTab, language: settings.language || 'auto' });
 
     // If language selection changed, reload the page with the new language
     if (selectedLanguage !== prevSelected) {

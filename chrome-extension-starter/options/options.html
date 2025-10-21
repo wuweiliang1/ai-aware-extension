@@ -98,6 +98,20 @@
     </section>
 
     <section>
+      <h2 data-i18n="options.aiContext">AI 匹配上下文</h2>
+      <label>
+        <span data-i18n="options.contextModeLabel">传递给 AI 的信息:</span>
+        <select id="contextMode">
+          <option value="title-only" data-i18n="options.contextTitleOnly">仅书签标题（更快，更省成本）</option>
+          <option value="title-url" data-i18n="options.contextTitleUrl">标题 + URL（更准确，成本稍高）</option>
+        </select>
+      </label>
+      <p style="font-size:12px; color:#777; margin-top:4px">
+        <span data-i18n="options.contextHint">💡 仅标题模式：响应更快，消耗更少 token，适合标题信息丰富的书签<br>标题+URL 模式：AI 可以从 URL 中提取更多细节（如域名、路径参数等），提高匹配准确率</span>
+      </p>
+    </section>
+
+    <section>
       <h2 data-i18n="options.tabBehavior">标签页行为</h2>
       <label style="display:flex; align-items:center; gap:8px">
         <input type="checkbox" id="reopenTab" />
