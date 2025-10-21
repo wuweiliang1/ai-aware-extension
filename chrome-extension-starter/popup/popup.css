@@ -43,3 +43,20 @@ ul { padding-left: 18px; margin: 6px 0 }
 li { margin: 6px 0; color: var(--muted); font-size: 13px }
 .open-info { margin-top:8px; font-size:12px; color: var(--accent-2) }
 #donateLink:hover { color: #fcd34d; transform: scale(1.05) }
+.local-hint { 
+  margin-top: 8px; 
+  padding: 8px 10px; 
+  background: rgba(251, 191, 36, 0.1); 
+  border-left: 3px solid #fbbf24; 
+  border-radius: 6px; 
+  font-size: 11px; 
+  color: #fcd34d; 
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.local-hint span:first-child {
+  flex-shrink: 0;
+  font-size: 14px;
+}

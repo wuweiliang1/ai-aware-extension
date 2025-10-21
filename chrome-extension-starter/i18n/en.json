@@ -19,7 +19,8 @@
     "historyClear": "Clear",
     "tooltipHistory": "History",
     "tooltipSettings": "Settings",
-    "donateLink": "Like it? Buy me a coffee"
+    "donateLink": "Like it? Buy me a coffee",
+    "localModeHint": "Local mode has limited accuracy. Click ⚙️ above to configure AI for better results."
   },
   "options": {
     "pageTitle": "Extension Options",

@@ -30,6 +30,12 @@
       <input id="intent" type="text" data-i18n-placeholder="popup.intentPlaceholder" placeholder="Enter your intent" />
       <p id="status"><span data-i18n="popup.status">Status</span>: <em data-i18n="popup.statusReady">Ready</em></p>
       <button id="find" data-i18n="popup.btnFind">Find & Open</button>
+      
+      <!-- Local mode hint -->
+      <div id="localModeHint" class="local-hint" style="display:none">
+        <span>💡 </span>
+        <span data-i18n="popup.localModeHint">Local mode has limited accuracy. Click ⚙️ above to configure AI for better results.</span>
+      </div>
 
       <div id="result" data-i18n="popup.resultNotQueried">Not queried yet</div>
       <ul id="candidates"></ul>

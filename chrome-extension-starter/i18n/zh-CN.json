@@ -19,7 +19,8 @@
     "historyClear": "清空",
     "tooltipHistory": "历史记录",
     "tooltipSettings": "打开设置",
-    "donateLink": "觉得好用？请我喝杯咖啡"
+    "donateLink": "觉得好用？请我喝杯咖啡",
+    "localModeHint": "本地模式效果有限，点击右上角 ⚙️ 配置 AI 以获得更好的匹配效果"
   },
   "options": {
     "pageTitle": "扩展设置",

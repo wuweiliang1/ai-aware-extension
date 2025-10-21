@@ -40,6 +40,7 @@ function applyTranslations() {
   const historyPanel = document.getElementById('historyPanel');
   const historyList = document.getElementById('historyList');
   const clearHistoryBtn = document.getElementById('clearHistory');
+  const localModeHint = document.getElementById('localModeHint');
 
   // Load and display history
   async function loadHistory() {
@@ -175,6 +176,21 @@ function applyTranslations() {
     chrome.tabs.create({ url: chrome.runtime.getURL('donate/donate.html') });
   });
 
+  // Check provider and show hint for local mode
+  async function checkProviderAndShowHint() {
+    const data = await storageGet(['provider']);
+    const provider = (data && data.provider) || 'local';
+    
+    if (provider === 'local') {
+      localModeHint.style.display = 'flex';
+    } else {
+      localModeHint.style.display = 'none';
+    }
+  }
+
   // Load history on init
   loadHistory();
+  
+  // Check and show local mode hint
+  checkProviderAndShowHint();
 })();
