@@ -20,9 +20,9 @@ function applyTranslations() {
     const key = el.getAttribute('data-i18n');
     const translation = window.i18n.t(key);
     
-    // For HTML content that needs to preserve structure, use textContent for simple text
-    if (key === 'options.hint') {
-      // Keep the HTML structure for multi-line hint
+    // For HTML content that needs to preserve structure, use innerHTML for hints with <br> tags
+    if (key === 'options.hint' || key === 'options.contextHint') {
+      // Keep the HTML structure for multi-line hints
       el.innerHTML = translation;
     } else {
       el.textContent = translation;
