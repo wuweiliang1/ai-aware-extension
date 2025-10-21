@@ -65,10 +65,10 @@ Required to read your bookmarks for matching. We only read - never modify, delet
 Required to save your settings and preferences locally in your browser.
 
 ### Tabs Permission
-Required to check if bookmarks are already open and to activate or open tabs.
+Required to check if bookmarks are already open, activate existing tabs, create new tabs, and manage tab behavior (such as reopening tabs).
 
 ### Host Permissions
-Required to communicate with AI APIs and to compare tab URLs for smart tab management. We do not access page content or inject scripts.
+Required to communicate with AI APIs (DeepSeek, OpenAI, or custom endpoints). We do not access page content or inject scripts.
 
 ## 7. Data Security
 

@@ -8,8 +8,7 @@
   "permissions": [
     "storage",
     "bookmarks",
-    "tabs",
-    "activeTab"
+    "tabs"
   ],
   "host_permissions": [
     "https://api.deepseek.com/*",
